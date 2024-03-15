@@ -1,0 +1,12 @@
+Anonymous block syntax is case insensitive
+Declare section is optional
+exception section is optional
+Execution section always begin with keyword : BEGIN
+Anonymous block always end with the keyword : END 
+Block has to be run by "/"
+
+comment styles
+================
+
+Single line --
+multiple line  /*  some words */

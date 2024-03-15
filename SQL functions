@@ -1,0 +1,18 @@
+option: 1
+
+ln_months := months_between(date1,date2);
+
+option: 2
+
+select months_between(date1,date2) into ln_months from dual;
+
+sample program
+==================
+DECLARE
+v_months number(5);
+v_date1 date := to_date('01-01-2023','DD-MM-YYYY');
+v_date2 date := to_date('01-07-2023','DD-MM-YYYY');
+BEGIN
+v_months := months_between(v_date2,v_date1);
+dbms_output.put_line(v_months);
+END;

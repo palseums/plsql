@@ -1,0 +1,6 @@
+DECLARE
+v_seq NUMBER;
+BEGIN
+select seq_no.NEXTVAL into v_seq from dual;
+v_seq := seq_no.NEXTVAL
+END;

@@ -1,0 +1,23 @@
+create table customer(
+    c_id BIGINT,
+    c_name CHARACTER VARYING(30),
+    c_age INT,
+    c_address CHARACTER VARYING(50),
+    c_phone CHARACTER VARYING(50)
+)
+
+create table customer(
+    c_id number,
+    c_name varchar(30),
+    c_age number,
+    c_address varchar(50),
+    c_phone varchar(50)
+)
+
+
+insert into customer values(1,'palaniappan',42,'600','6176531235');
+insert into customer values(2,'uma',35,'601','789');
+insert into customer values(3,'sree',14,'602','1234');
+insert into customer values(4,'adwaidan',7,'603','897');
+insert into customer values(5,'paramasivam',69,'604','1456');
+insert into customer values(6,'kayal',65,'700','5678');

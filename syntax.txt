@@ -1,0 +1,47 @@
+DECLARE
+<declare section>
+BEGIN
+<executable commands>
+END;
+
+sample
+=========
+
+set serveroutput on; # This is optional if it is doesnot print the output because of some settings
+
+Anonymous block
+========================
+
+DECLARE
+BEGIN
+dbms_output.put_line("Hello");
+END;
+
+The above is called Anonymous block because there is no name attached to it.
+
+
+Type of PL/SQL Block
+=======================
+
+Procedure Block
+=================
+
+procedure <name>
+IS
+<declare section>
+BEGIN
+<executable commands>
+Exception
+END;
+
+
+Function Blocl
+================
+
+Function <name> Return <data_type>
+IS
+<declare section>
+BEGIN
+<executable commands>
+Exception
+END;

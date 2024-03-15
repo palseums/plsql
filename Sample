@@ -1,0 +1,9 @@
+DECLARE
+v_count number(5);
+BEGIN
+select count(*) into v_count from dept;
+dbms_output.put_line("The number of depts in dept table =" || v_count);
+END;
+
+Local variable, cursor, functions and procedures that are used inside the block can also be defined
+The declaration section is not mandatory. if there is no any of the above we can omit the declare section

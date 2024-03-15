@@ -1,0 +1,101 @@
+How to declare a cursor
+==========================
+
+CURSOR <> [Input Parameter]
+IS
+<Query with [Input parameter]>
+
+Example:
+CURSOR cur_emp (p_deptno varchar2)
+IS
+select * from emp where deptno = p_deptno;
+
+
+WHERE TO DECLARE CURSOR
+============================
+
+DECLARE
+    CURSOR <CUR_NAME> (P_DEPTNO VARCHAR2)
+    IS
+    SELECT * FROM EMP WHERE DEPTNO = P_DEPTNO;
+BEGIN
+END;
+
+EXPLICIT CURSOR CONTROL
+==========================
+1) DECLARE THE CURSOR
+2) OPEN THE CURSOR
+3) FETCH A ROW
+4) TEST FOR END OF CURSOR
+5) CLOSE THE CURSOR
+
+SAMPLE PROGRAM
+===================
+
+DECLARE
+    cursor emp_cursor IS select * from emp;
+    v_emp emp_cursor%rowtype;
+
+BEGIN
+    open emp_cursor;
+    LOOP
+        FETCH emp_cursor into v_emp;
+        -- Attribute to check the cursor has reached end or not
+        exit when emp_cursor%NOTFOUND;
+        DBMS_OUTPUT.PUTLINE(v_emp.ename);
+    END LOOP;
+    CLOSE emp_cursor;
+END;
+
+sample program with parameter
+=================================
+
+DECLARE
+    cursor emp_cursor ( p_deptno number) IS select * from emp where deptno = p_deptno;
+    v_emp emp_cursor%rowtype;
+    v_deptno := 10;
+BEGIN
+    open emp_cursor(v_deptno);
+    LOOP
+        FETCH emp_cursor into v_emp;
+        exit when emp_cursor%NOTFOUND;
+        DBMS_OUTPUT.PUTLINE(v_emp.ename);
+    END LOOP;
+    CLOSE emp_cursor;
+END;
+
+
+For loop
+===========
+No need to explicitly write code to 
+declare a cursor
+open and fetch cursor
+close the cursor
+all those steps are done implicitly in the first line of for itself
+
+FOR LOOP SAMPLE
+==================
+
+DECLARE
+BEGIN
+FOR CUR_REC IN (SELECT * FROM EMP) LOOP
+    DBMS_OUTPUT.PUT_LINE(CUR_REC.EMPNO)
+END LOOP;
+END;
+
+Another way for for loop
+=============================
+
+DECLARE
+cursor cur_name is select * from emp where deptno = 10;
+BEGIN
+FOR CUR_REC IN ( cur_name) LOOP
+    DBMS_OUTPUT.PUT_LINE(CUR_REC.EMPNO)
+END LOOP;
+END;
+
+
+CURSOR ATTRIBUTE
+=====================
+
+

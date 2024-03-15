@@ -1,0 +1,8 @@
+variable v1 number(10);
+-- exec :v1 :=20;
+DECLARE
+v_sal number(10);
+BEGIN
+	:v1 :=20;
+	select sum(sal) into v_sal from emp where deptno = :v1;
+END;

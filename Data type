@@ -1,0 +1,6 @@
+to_char()  from DATE, NUMBER
+to_date() from STRING, CHAR 
+to_number() from STRING, CHAR 
+
+
+CAST ( {expr | (subquery) | multiset (subquery)} AS type_name)

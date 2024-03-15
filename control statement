@@ -1,0 +1,100 @@
+conditional control
+=====================
+if and else
+case
+
+
+iterative control
+=====================
+simple loop
+while loop
+for loop
+
+sequential control
+=====================
+null statement
+go to statement
+
+if statement
+====================
+
+if <condition> then
+elsif <condition> then
+else
+end if ;
+
+
+CASE statement
+=================
+case 
+when <condition> then
+when <condition> then
+else
+end case;
+
+
+simple loop
+=================
+i := 0;
+LOOP
+    i := i+1;
+    dbms_output.put_line(i);
+    exit when i > 10;
+END LOOP;
+
+Important points:
+ counter initialization
+ counter increment
+ exit condition
+ starts with loop & end with end loop
+ it will execute at least once
+
+ while loop
+=================
+
+i := 0;
+while i < 10
+loop
+    i := i + 1;
+    dbms_output.put_line(i);
+end loop;
+
+For loop ( up to 19c)
+=======================
+for i in lower_bound..Upper_bound 
+LOOP
+    dbms_output.put_line(i);
+END LOOP;
+
+for i in 1..10 
+LOOP
+    dbms_output.put_line(i);
+END LOOP;
+
+for i in REVERSE 1..10 LOOP
+    dbms_output.put_line(i);
+END LOOP;
+
+
+For loop ( IN 21C)
+=======================
+for i in lower_bound..Upper_bound [BY STEP]
+LOOP
+    dbms_output.put_line(i);
+END LOOP;
+
+for i in 1..25 BY 5
+LOOP
+dbms_output.put_line(i);
+END LOOP;
+
+
+GO TO statement
+==================
+
+GOTO print_now;
+
+<<print_now>>
+dbms_output.put_line('print something');
+
+

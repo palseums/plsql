@@ -1,0 +1,42 @@
+employee_name varchar2(20) DEFAULT NULL;
+employee_name varchar2(20) := 'KING';
+
+var_pi constant number(7,6) := 3.14;
+
+
+
+data types
+==============
+
+scalar data type
+==================
+
+v_emp varchar2(30)
+
+
+composite data type 
+====================
+
+v_emp TABLE OF VARCHAR2(30)
+
+
+%Type, %ROWTYPE
+===================
+
+varEmpno emp.ename%TYPE
+v2_rec emp%ROWTYPE
+
+sample program
+=================
+
+DECLARE
+
+v2_rec emp%ROWTYPE;
+
+BEGIN
+
+select * into v2_rec from employee where empno = 7369;
+dbms_output.put_line('employee name' || v2_rec.name)
+dbms_output.put_line('age' || v2_rec.age)
+
+END;
